@@ -1,0 +1,24 @@
+  <h1>D's List</h1>
+  <p1>Create Post</p1>
+
+  <form id="Create-Post" method="post" action="/posts/add">
+    <label class="label" for="category">Category</label>
+    <select name="post[category_id]">
+        <% Category.all.each do |row| %>
+            <option value=<%=row.id%>><%=row.category_title%></option>
+        <% end %>
+    </select>
+    <br>
+
+    <label class="label" for="post_title">Title:</label>
+    <input type="text" name="post[post_title]" placeholder="e.g., My Room 4 Rent" required>
+    <%= "#{@errors[:post_title].join("; ")}" if @errors && @errors.has_key?(:post_title) %>
+    <br>
+
+    <label class="label" for="post_text">Post:</label>
+    <textarea rows="10" cols="150" name="post[post_body]" placeholder="Enter your post information here" required></textarea>
+    <%= "#{@errors[:post_body].join("; ")}" if @errors && @errors.has_key?(:post_body) %>
+    <br>
+
+    <div class="submit"><input type="submit" value="Create-Post"></div>
+  </form>

@@ -1,0 +1,5 @@
+Category.create(:category_title => "Parts")
+Category.create(:category_title => "Housing Rent")
+Category.create(:category_title => "Boats")
+Category.create(:category_title => "Cars")
+Category.create(:category_title => "Electronics")

@@ -1,0 +1,18 @@
+ <div class="container">
+ <h1>D's List</h1>
+ <p>Talkin bout my D</p>
+
+<a href='/posts/add'>Add Post</a>
+<table border="3">
+<thead>
+<th>Posts for the <%=Category.find(params[:id]).category_title%> Category</th>
+</thead>
+<% if @posts %>
+	<% @posts.each do |row| %>
+		<tr>
+		<td><a href="/posts/<%=row.id%>"><%=row.post_title%></a></td>
+		</tr>
+	<% end %>
+<% end %>
+</table>
+</div>

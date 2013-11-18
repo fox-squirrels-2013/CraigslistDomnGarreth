@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>D's List</h1>
+  <p>Talkin bout my D</p>
+
+<a href='/posts/add'>Add Post</a>
+<table border="3">
+<thead>
+<th>Categories</th>
+</thead>
+<% @categories.each do |row| %>
+<tr>
+<td><a href="/category/<%=row.id%>"><%= row.category_title %></a></td>
+</tr>
+<% end %>
+</table>
+</div>
